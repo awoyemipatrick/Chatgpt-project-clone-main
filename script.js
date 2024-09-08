@@ -1,0 +1,1 @@
+document.getElementById('chatDetail').innerHTML = "Hello ChatGPT!  Lorem ipsum dolor sit amet, consectetur adipisicing"
