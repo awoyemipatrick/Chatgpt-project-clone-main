@@ -41,9 +41,9 @@ const showTypingAnimation = () => {
           <div class="chat-details">
             <img src="images/chatbot.jpg" alt="user-img" />
             <div class="typing-animation">
-              <div class="typing-dot" style="--delay: 0.2s"></div>
-              <div class="typing-dot" style="--delay: 0.3s"></div>
-              <div class="typing-dot" style="--delay: 0.4s"></div>
+              <span class="typing-dot" style="--delay: 0.2s"></span>
+              <span class="typing-dot" style="--delay: 0.3s"></span>
+              <span class="typing-dot" style="--delay: 0.4s"></span>
             </div>
           </div>
           <span class="material-icons">content_copy</span>
