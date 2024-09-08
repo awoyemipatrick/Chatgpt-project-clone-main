@@ -38,7 +38,7 @@ body{
     display: flex;
     max-width: 1200px;
     width: 100%;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
 }
 .chat .chat-content span{
@@ -49,8 +49,9 @@ body{
 .chat:hover .chat-content span{
     visibility: visible;
 }
-.chat .chat-details{
+.chat .chat-content .chat-details{
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 .chat .chat-details img{
@@ -84,6 +85,7 @@ span.material-icons{
     background: var(--text-color);
     animation: animateDots 1.5s var(--delay) ease-in-out infinite;
 }
+
 @keyframes animateDots {
     0%, 44% {
         transform: translateY(0px);
