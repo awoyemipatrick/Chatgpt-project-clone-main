@@ -33,3 +33,25 @@ const createElement = (html, className) => {
     chatDiv.innerHTML = html;
     return chatDiv // return the created chat div
 }
+
+// Function to get chat response
+const getChatResponse = async (incomingChatDiv) => {
+    const API_URL = "https://api.openai.com/v1/chat/completions";
+    const pElement = document.createElement("p");
+    // Define the properties and data for the API request
+    const requestOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": Bearer ${API_KEY}
+        },
+        body: JSON.stringify({
+            model: "gpt-4o-mini",
+            prompt: userText,
+            max_tokens: 2048,
+            temperature: 0.2,
+            n: 1,
+            stop: null
+        })
+    }
+
