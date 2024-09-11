@@ -161,3 +161,35 @@ span.material-symbols-rounded {
   width: 100%;
   align-items: flex-end;
 }
+.typing-container .typing-textarea {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.typing-textarea textarea {
+  resize: none;
+  height: 55px;
+  width: 100%;
+  border: none;
+  padding: 15px 45px 15px 20px;
+  color: var(--text-color);
+  font-size: 1rem;
+  border-radius: 4px;
+  max-height: 250px;
+  overflow-y: auto;
+  background: var(--incoming-chat-bg);
+  outline: 1px solid var(--incoming-chat-border);
+}
+.typing-textarea textarea::placeholder {
+  color: var(--placeholder-color);
+}
+.typing-content span {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  border-radius: 4px;
+  font-size: 1.35rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--icon-color);
+}
