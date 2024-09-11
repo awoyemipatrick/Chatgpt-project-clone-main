@@ -77,5 +77,9 @@ const showTypingAnimation = () => {
                     </div>
                     <button onclick="copyResponse(this)" class="material-symbols-rounded">content_copy</button>
                 </div>`;
-   
+    // Create an incoming chat div with typing animation and append it to chat container
+    const incomingChatDiv = createChatElement(html, "incoming");
+    chatContainer.appendChild(incomingChatDiv);
+    chatContainer.scrollTo(0, chatContainer.scrollHeight);
+    getChatResponse(incomingChatDiv);
 }
