@@ -84,7 +84,7 @@ body {
   align-items: flex-start;
   justify-content: space-between;
 }
-span.material-symbols-rounded {
+button.material-symbols-rounded {
   user-select: none;
   cursor: pointer;
 }
