@@ -127,3 +127,25 @@ deleteButton.addEventListener("click", () => {
     getChatResponse(incomingChatDiv);
 }
 
+themeButton.addEventListener("click", () => {
+    // Toggle body's class for the theme mode and save the updated theme to the local storage 
+    document.body.classList.toggle("light-mode");
+    localStorage.setItem("themeColor", themeButton.innerText);
+    themeButton.innerText = document.body.classList.contains("light-mode") ? "dark_mode" : "light_mode";
+});
+const initialInputHeight = chatInput.scrollHeight;
+chatInput.addEventListener("input", () => {   
+    // Adjust the height of the input field dynamically based on its content
+    chatInput.style.height =  ${initialInputHeight}px;
+    chatInput.style.height = ${chatInput.scrollHeight}px;
+});
+chatInput.addEventListener("keydown", (e) => {
+    // If the Enter key is pressed without Shift and the window width is larger 
+    // than 800 pixels, handle the outgoing chat
+    if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
+        e.preventDefault();
+        handleOutgoingChat();
+    }
+});
+loadDataFromLocalstorage();
+sendButton.addEventListener("click", handleOutgoingChat);
