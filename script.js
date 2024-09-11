@@ -7,6 +7,8 @@ const deleteButton = document.querySelector("#delete-btn");
 let userText = null;
 const API_KEY = "sk-Eyee-fmTI0BdAxbxSrDZHQQfcuXd969LJ1rjMhc-ibT3BlbkFJNIDTBUgnNIJ7SqtcSMVMlwCKmLPMjSoF0YRcV3abkA"; // this is a key
 
+const initialHeight = chatInput.scrollHeight;
+
 const loadDataFromLocalstorage = () => {
     const themecolor = localStorage.getItem("light-theme");
 
@@ -22,6 +24,8 @@ const loadDataFromLocalstorage = () => {
     chatContainer.scrollTo(0, chatContainer.scrollHeight);
 
 }
+
+loadDataFromLocalstorage();
 
 const createElement = (html, className) => {
     const chatDiv = document.createElement("div");
