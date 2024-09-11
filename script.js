@@ -90,7 +90,7 @@ const showTypingAnimation = () => {
                             <div class="typing-dot" style="--delay: 0.4s"></div>
                         </div>
                     </div>
-                    <span onclick="copyResponse(this)" class="material-symbols-rounded">content_copy</span>
+                    <button onclick="copyResponse(this)" class="material-symbols-rounded">content_copy</button>
                 </div>`;
     // Create an incoming chat div with typing animation and append it to chat container
     const incomingChatDiv = createChatElement(html, "incoming");
