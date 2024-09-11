@@ -77,3 +77,25 @@ const copyResponse = (copyBtn) => {
     copyBtn.textContent = "done";
     setTimeout(() => copyBtn.textContent = "content_copy", 1000);
 }
+
+// Display the typing animation and call the getChatResponse function
+const showTypingAnimation = () => {
+    // Display the typing animation and call the getChatResponse function
+    const html = `<div class="chat-content">
+                    <div class="chat-details">
+                        <img src="images/chatbot.jpg" alt="chatbot-img">
+                        <div class="typing-animation">
+                            <div class="typing-dot" style="--delay: 0.2s"></div>
+                            <div class="typing-dot" style="--delay: 0.3s"></div>
+                            <div class="typing-dot" style="--delay: 0.4s"></div>
+                        </div>
+                    </div>
+                    <span onclick="copyResponse(this)" class="material-symbols-rounded">content_copy</span>
+                </div>`;
+    // Create an incoming chat div with typing animation and append it to chat container
+    const incomingChatDiv = createChatElement(html, "incoming");
+    chatContainer.appendChild(incomingChatDiv);
+    chatContainer.scrollTo(0, chatContainer.scrollHeight);
+    getChatResponse(incomingChatDiv);
+}
+
