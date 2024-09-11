@@ -94,6 +94,34 @@ const showTypingAnimation = () => {
                 </div>`;
     // Create an incoming chat div with typing animation and append it to chat container
     const incomingChatDiv = createChatElement(html, "incoming");
+
+const handleOutgoingChat = () => {
+    userText = chatInput.value.trim(); // Get chatInput value and remove extra spaces
+    if(!userText) return; // If chatInput is empty return from here
+    // Clear the input field and reset its height
+    chatInput.value = "";
+    chatInput.style.height = ${initialInputHeight}px;
+    const html = `<div class="chat-content">
+                    <div class="chat-details">
+                        <img src="images/user.jpg" alt="user-img">
+                        <p>${userText}</p>
+                    </div>
+                </div>`;
+    // Create an outgoing chat div with user's message and append it to chat container
+    const outgoingChatDiv = createChatElement(html, "outgoing");
+    chatContainer.querySelector(".default-text")?.remove();
+    chatContainer.appendChild(outgoingChatDiv);
+    chatContainer.scrollTo(0, chatContainer.scrollHeight);
+    setTimeout(showTypingAnimation, 500);
+}
+deleteButton.addEventListener("click", () => {
+    // Remove the chats from local storage and call loadDataFromLocalstorage function
+    if(confirm("Are you sure you want to delete all the chats?")) {
+        localStorage.removeItem("all-chats");
+        loadDataFromLocalstorage();
+    }
+});
+    
     chatContainer.appendChild(incomingChatDiv);
     chatContainer.scrollTo(0, chatContainer.scrollHeight);
     getChatResponse(incomingChatDiv);
